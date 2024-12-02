@@ -145,7 +145,8 @@ export default function CustomerList() {
 			{
 				fileName: "customers.csv",
 				columnKeys: ["firstname", "lastname", "streetaddress", "postcode",
-					"city", "email", "phone"]
+					"city", "email", "phone"],
+				skipHeader: true
 			}
 		);
 	}
