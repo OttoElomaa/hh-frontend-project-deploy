@@ -1,6 +1,6 @@
 {
   "name": "frontend-project-deploy",
-  "homepage": "https://{username}.github.io/{repo-name}/",
+  "homepage": "https://ottoelomaa.github.io/hh-frontend-project-deploy/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
