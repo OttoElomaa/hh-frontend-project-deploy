@@ -115,7 +115,7 @@ export default function EditCustomerForm(props) {
 
 				</DialogContent>
 				< DialogActions >
-					< Button onClick={handleSaveCustomerButton} > Add Customer </Button>
+					< Button onClick={handleSaveCustomerButton} >Save Customer </Button>
 					<Button onClick={handleClose}> Cancel </Button>
 
 				</DialogActions>
