@@ -47,7 +47,7 @@ export default function TrainingList() {
 		{
 			headerName: 'Customer',
 			cellRenderer: (params) =>
-				params.data.customer.firstname + ' ' + params.data.customer.lastname, 
+				params.data.customer.firstname + ' ' + params.data.customer.lastname,
 			flex: 1,
 			sortable: true, filter: true, floatingFilter: true,
 
@@ -66,7 +66,7 @@ export default function TrainingList() {
 
 
 
-	
+
 
 	//hae autot backendistä 
 	//getCars funktio
@@ -102,22 +102,24 @@ export default function TrainingList() {
 
 	const deleteTraining = (params) => {
 		console.log("params ", params.data);
+		if (window.confirm("Are you sure you want to delete this training session?")) {
 
-		fetch("https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/trainings/" + params.data.id,
-			{ method: 'DELETE' })
-			.then(response => {
-				if (response.ok) {
-					setOpenSnackbar(true);
-					setMsg("Delete succeed");
-					getTrainings();
-				}
-				else {
-					openSnackbar(false);
-				}
-			})
-			.catch(err => {
-				// Something went wrong
-			});
+			fetch("https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/trainings/" + params.data.id,
+				{ method: 'DELETE' })
+				.then(response => {
+					if (response.ok) {
+						setOpenSnackbar(true);
+						setMsg("Delete succeed");
+						getTrainings();
+					}
+					else {
+						openSnackbar(false);
+					}
+				})
+				.catch(err => {
+					// Something went wrong
+				});
+		}
 	}
 
 
@@ -135,7 +137,7 @@ export default function TrainingList() {
 				>
 				</AgGridReact>
 
-				
+
 				<Snackbar
 					open={openSnackbar}
 					message={msg}
